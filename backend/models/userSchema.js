@@ -39,7 +39,7 @@ userSchema.pre('save', async function(next){
 // Generate Tokens to Verify User
 userSchema.methods.generateToken = async function(){
     try {
-        let generateToken = jwt.sign({_id : this._id}, process.env.SECRET_KEY);
+        let generatedToken = jwt.sign({_id : this._id}, process.env.SECRET_KEY);
         this.tokens = this.tokens.concat({token : generatedToken});
         await this.save();
         return generatedToken;

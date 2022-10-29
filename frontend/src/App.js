@@ -5,7 +5,7 @@ import About from './components/About';
 import Services from './components/Services';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch } from 'react-router';
 import Login from './components/Login';
 import Register from './components/Register';
 import Dashboard from './components/Dashboard';
@@ -56,10 +56,10 @@ function App() {
         <Route exact path="/about" component={About} />
         <Route exact path="/service" component={Services} />
         <Route exact path="/contact" component={Contact} />
-        <Protectedroute exact path="/login" component={Login} auth={auth1} />
-        <Protectedroute exact path="/register" component={Register} auth={auth1} />
-        <Protectedroute exact path="/dashboard" component={Dashboard} auth={auth} />
-        <Protectedroute exact path="/logout" component={Logout} auth={auth} />
+        <Protectedroute exact path="/login" component={Login} auth={auth1}/>
+        <Protectedroute exact path="/register" component={Register} auth={auth1}/>
+        <Protectedroute exact path="/dashboard" component={Dashboard} auth={auth}/>
+        <Protectedroute exact path="/logout" component={Logout} auth={auth}/>
       </Switch>
       <Footer/>
     </>
@@ -67,3 +67,12 @@ function App() {
 }
 
 export default App;
+
+
+// Now we have to Procted Out Route Like without Login
+// You can not go to Dashboard
+// And after login you can not login again
+// We need Protected Routes
+
+// We can acces them if Auth is false 
+// Now we need to Change Navbar Dynamically
